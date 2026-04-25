@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 60%;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 { color: #2c3e50; }
+        h3 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+
+            // Name validation
+            if (name === "") {
+                alert("Name is required!");
+                return false;
+            }
+
+            // Email validation
+            if (email === "") {
+                alert("Email is required!");
+                return false;
+            }
+
+            if (!email.includes("@")) {
+                alert("Enter a valid email!");
+                return false;
+            }
+
+            // Message validation
+            if (message === "") {
+                alert("Message cannot be empty!");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Prakyath</h1>
+    <h3>Computer Science Engineering Student</h3>
+
+    <ul>
+        <li>Interested to explore new things.</li>
+        <li>Languages known: C, Python.</li>
+    </ul>
+
+    <h3>Education</h3>
+    <ul>
+        <li>BE in Computer Science Engineering (Pursuing)</li>
+        <li>Completed Computer Course</li>
+        <li>12th Grade</li>
+        <li>10th Grade</li>
+    </ul>
+
+    <h3>Career Objective</h3>
+    <p>
+        To secure a position in the field of Computer Science where I can
+        apply my knowledge and improve my skills.
+    </p>
+
+    <h3>Contact Me</h3>
+
+    <!-- FORM ADDED -->
+    <form onsubmit="return validateForm()">
+        Name:
+        <input type="text" id="name">
+
+        Email:
+        <input type="text" id="email">
+
+        Message:
+        <textarea id="message"></textarea>
+
+        <button type="submit">Send</button>
+    </form>
+
+</div>
+
+</body>
+</html>
